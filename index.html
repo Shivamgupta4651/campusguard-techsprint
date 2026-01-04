@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Campus Safety Reporter | TechSprint</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-shield-alt"></i>
+        <h1>CampusGuard</h1>
+      </div>
+      <div class="tagline">Anonymous Safety Reporting</div>
+    </header>
+
+    <!-- Report Form -->
+    <div class="form-card">
+      <div class="form-header">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h2>Report Incident</h2>
+      </div>
+      
+      <form id="incidentForm">
+        <div class="input-group">
+          <label><i class="fas fa-edit"></i> What happened?</label>
+          <textarea id="description" required rows="4" placeholder="Describe the incident in detail..."></textarea>
+        </div>
+
+        <div class="input-group">
+          <label><i class="fas fa-tag"></i> Category</label>
+          <select id="category">
+            <option value="">Select category</option>
+            <option value="harassment">👥 Harassment</option>
+            <option value="ragging">🎓 Ragging</option>
+            <option value="infrastructure">🏗️ Infrastructure</option>
+            <option value="emergency">🚨 Emergency</option>
+            <option value="other">❓ Other</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label><i class="fas fa-camera"></i> Photo (optional)</label>
+          <input type="file" id="imageInput" accept="image/*">
+        </div>
+
+        <div class="input-group">
+          <button type="button" id="locationBtn" class="btn-secondary">
+            <i class="fas fa-map-marker-alt"></i> Get Location
+          </button>
+          <div id="locationDisplay"></div>
+        </div>
+
+        <button type="submit" class="btn-primary">
+          <i class="fas fa-paper-plane"></i> Report Incident
+        </button>
+      </form>
+    </div>
+
+    <!-- Reports -->
+    <div class="reports-section">
+      <div class="section-header">
+        <i class="fas fa-list"></i>
+        <h2>Recent Reports <span id="reportCount">0</span></h2>
+      </div>
+      <div id="reports" class="reports-list"></div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
